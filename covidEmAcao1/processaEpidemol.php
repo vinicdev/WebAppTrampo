@@ -22,9 +22,9 @@ $resultado_dados = mysqli_query($conn, $result_dados);
 
 //Verifica se foi feito o cadastro e retorna uma mensagem
 if(mysqli_insert_id($conn)){
-    $_SESSION['msg'] = "<p style = 'color:green;'>Usuário Cadastrado com sucesso</p>";
+    $_SESSION['msg'] = "<p style = 'color:green;'>Dados Epidemiológicos Cadastrado com sucesso</p>";
     header("Location: cadastroEpidemol.php");
 }else {
-    $_SESSION['msg'] = "<p style = 'color:red;'>Usuário não foi Cadastrado com sucesso</p>";
+    $_SESSION['msg'] = "<p style = 'color:red;'>Dados Epidemiológicos não foi Cadastrado com sucesso</p>";
     header("Location: cadastroEpidemol.php");
 }
