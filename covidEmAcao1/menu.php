@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!empty($_SESSION['id'])) {
+
+} else {
+    $_SESSION['msg'] = "Faça o login para acessar essa página";
+    header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,7 +46,7 @@
             
         </div>
         <div class="botoesFim">
-            <a href="#">Sair</a><br>
+            <a href="sair.php">Sair</a><br>
             <a href="http://localhost/phpmyadmin/db_structure.php?server=1&db=covidemacao1" target="_blank">Banco</a><br>
         </div>
 

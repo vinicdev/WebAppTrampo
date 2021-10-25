@@ -1,6 +1,14 @@
 <?php
 session_start();
 include_once("conexao.php");
+
+if(!empty($_SESSION['id'])) {
+
+} else {
+    $_SESSION['msg'] = "Faça o login para acessar essa página";
+    header("Location: login.php");
+}
+
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 $result_dados = "SELECT * FROM meiosdeprevencao WHERE idMeios = '$id'";
 $resultado_dados = mysqli_query($conn, $result_dados);

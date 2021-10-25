@@ -1,5 +1,12 @@
 <?php
 session_start();
+if(!empty($_SESSION['id'])) {
+
+} else {
+    $_SESSION['msg'] = "Faça o login para acessar essa página";
+    header("Location: login.php");
+
+}
 ?>
 
 <!DOCTYPE html>
