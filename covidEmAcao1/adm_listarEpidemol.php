@@ -29,11 +29,13 @@ include_once("conexao.php");
             $result_dados = "SELECT * FROM dadosepidemiologicos";
             $resultado_dados = mysqli_query($conn, $result_dados);
             while($row_dados = mysqli_fetch_assoc($resultado_dados)){
-                echo "ID: ". $row_dados['id'] . "<br>";
+                echo "ID: " . $row_dados['id'] . "<br>";
                 echo "Casos: ". $row_dados['dadosCasos'] . "<br>";
                 echo "Obitos: ". $row_dados['dadosObitos'] . "<br>";
                 echo "Atualizado: ". $row_dados['created'] . "<br>";
-                echo "<a href='edit_epidemol.php?id=". $row_dados['id'] . "'>Editar</a><br><hr>";
+                echo "<a href='edit_epidemol.php?id=". $row_dados['id'] . "'>Editar</a><br>";
+                echo "<a href='proc_apagar_epidemol.php?id=". $row_dados['id'] . "'>Apagar</a><br><hr>";
+                
             }
         ?>
         

@@ -14,29 +14,25 @@
             <h3>Login</h3>
             <div class="links">
                 <a href="cad_usuario.php">Cadastrar</a><br>
-                <!-- <a href="listarUsuario.php">Consultar</a>     -->
-                <a href="adm_listarUsuario.php">Consultar/Editar</a>    
+                <a href="adm_listarUsuario.php">Consultar/Editar/Excluir</a>    
             </div>
 
             <h3>Dados Epidemiologicos</h3>
             <div class="links">
                 <a href="cad_epidemol.php">Cadastrar</a><br>
-                <!-- <a href="listarEpidemol.php">Consultar</a> -->
-                <a href="adm_listarEpidemol.php">Consultar/Editar</a>
+                <a href="adm_listarEpidemol.php">Consultar/Editar/Excluir</a>
             </div>
             
             <h3>Dados Vacinação</h3>
             <div class="links">
-                <a href="cadastroVacinacao.php">Cadastrar</a><br>
-                <!-- <a href="listarVacinacao.php">Consultar</a> -->
-                <a href="adm_listarVacinacao.php">Consultar/Editar</a>
+                <a href="cad_vacinacao.php">Cadastrar</a><br>
+                <a href="adm_listarVacinacao.php">Consultar/Editar/Excluir</a>
             </div>
             
             <h3>Dados Meios de prevenção</h3>
             <div class="links">
-                <a href="cadastroMeiosDePreven.php">Cadastrar</a><br>
-                <!-- <a href="listarMeiosDePreven.php">Consultar</a> -->
-                <a href="adm_listarMeiosDePreven.php">Consultar/Editar</a>
+                <a href="cad_meiosDePreven.php">Cadastrar</a><br>
+                <a href="adm_listarMeiosDePreven.php">Consultar/Editar/Excluir</a>
             </div>
             
         </div>

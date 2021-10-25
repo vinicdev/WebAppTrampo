@@ -10,9 +10,9 @@ include_once("conexao.php");
         <title>Listar Dados Vacinação</title>
     </head>
     <body>
-        <a href="cadastroVacinacao.php">Cadastrar</a><br>
+        <a href="cad_vacinacao.php">Cadastrar</a><br>
         <a href="menu.php">Menu</a><br>
-        <h1>Listar Dados Epidemiologicos</h1>
+        <h1>Listar Dados Vacinação</h1>
         <?php
             if(isset($_SESSION['msg'])){
                 echo $_SESSION['msg'];
@@ -29,7 +29,9 @@ include_once("conexao.php");
                 echo "Primeira Dose: ". $row_vacina['primeiraDose'] . "<br>";
                 echo "Segunda Dose: ". $row_vacina['segundaDose'] . "<br>";
                 echo "Recursos: ". $row_vacina['recursos'] . "<br>";
-                echo "Atualizado: ". $row_vacina['created'] . "<br><hr>";
+                echo "Atualizado: ". $row_vacina['created'] . "<br>";
+                echo "<a href='edit_vacinacao.php?id=". $row_vacina['idCovid'] . "'>Editar</a><br>";
+                echo "<a href='proc_apagar_vacinacao.php?id=". $row_vacina['idCovid'] . "'>Apagar</a><br><hr>";
             }
         ?>
         

@@ -22,8 +22,8 @@ $resultado_dados = mysqli_query($conn, $result_dados);
 //Verifica se foi feito o cadastro e retorna uma mensagem
 if(mysqli_insert_id($conn)){
     $_SESSION['msg'] = "<p style = 'color:green;'>Dados da Vacinação Cadastrado com sucesso</p>";
-    header("Location: cadastroVacinacao.php");
+    header("Location: cad_vacinacao.php");
 }else {
     $_SESSION['msg'] = "<p style = 'color:red;'>Dados da Vacinação não foi Cadastrado com sucesso</p>";
-    header("Location: cadastroVacinacao.php");
+    header("Location: cad_vacinacao.php");
 }

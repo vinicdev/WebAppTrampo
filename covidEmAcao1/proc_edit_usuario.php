@@ -14,8 +14,6 @@ $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
 //Inserindo formato
 $result_usuarios = "UPDATE login SET usuario='$usuario', senha='$senha', modified=NOW() WHERE id='$id'";
 
-echo $result_usuarios;
-die();LIMIT $inicio, $qnt_result_pg
 
 //Fazendo conexão e inserindo os dados
 $resultado_usuario = mysqli_query($conn, $result_usuarios);
