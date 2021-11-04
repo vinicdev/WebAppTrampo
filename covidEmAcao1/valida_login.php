@@ -24,16 +24,16 @@ if($btnLogin) {
 
                 header("Location: menu.php");
             } else {
-                $_SESSION['msg'] = "Login e senha incorretos";
+                $_SESSION['msg'] = "<p style = 'color:red;'> Login e senha incorretos</p>";
                 header("Location: login.php");
             }
         }
     } else {
-        $_SESSION['msg'] = "Login e senha incorretos";
+        $_SESSION['msg'] = "<p style = 'color:red;'> Login e senha incorretos</p>";
         header("Location: login.php");
     }
     
 }else {
-    $_SESSION['msg'] = "Página não encontrada";
+    $_SESSION['msg'] = "<p style = 'color:red;'>Página não encontrada</p>";
     header("Location: login.php");
 }

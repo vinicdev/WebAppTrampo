@@ -18,10 +18,10 @@ $resultado_usuario = mysqli_query($conn, $result_usuarios);
 //Verifica se foi feito o cadastro e retorna uma mensagem
 if(mysqli_insert_id($conn)){
     //verdadeiro
-    $_SESSION['msg'] = "<p style = 'color:green;'>Usuário Cadastrado com sucesso</p>";
+    $_SESSION['msg'] = "<p style = 'color:green; text-align: center;'>Usuário Cadastrado com sucesso</p>";
     header("Location: cad_usuario.php");
 }else {
     //falso
-    $_SESSION['msg'] = "<p style = 'color:red;'>Usuário não foi Cadastrado com sucesso</p>";
+    $_SESSION['msg'] = "<p style = 'color:red; text-align: center;'>Usuário não foi Cadastrado com sucesso</p>";
     header("Location: cad_usuario.php");
 }
