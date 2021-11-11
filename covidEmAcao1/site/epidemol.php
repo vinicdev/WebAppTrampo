@@ -9,24 +9,9 @@ include_once("../conexao.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/styles/index.css">
-    <style>
-        html {
-            background-color: #808080;
-        }
-        .resultado {
-            text-align:center;
-            color: #3D3333;
-            font-size: 19px;
-        }
-
-        .resultado h1 {
-            text-align: left;
-            padding-bottom: 25px;
-            color: #fff;
-        }
-    </style>
     <title>DADOS EPIDEMIOLOGICOS</title>
+    <link rel="stylesheet" href="../assets/styles/index.css">
+    <link rel="stylesheet" href="../assets/styles/consulta_site.css">
 </head>
 <body>
     <header id="header">
@@ -45,21 +30,65 @@ include_once("../conexao.php");
             </ul>
         </nav>
     </header>
-    <div class="resultado">
     <h1>Dados Epidemiologicos</h1>
+    <div class="resultado">
+    <?php 
+        $result_id = "SELECT MAX(id) as id FROM dadosepidemiologicos";
+        $resultado_id = mysqli_query($conn, $result_id);
+        $row_id = mysqli_fetch_assoc($resultado_id);
+
+        $ultimo_id = $row_id['id'];
+
+        $result_dados = "SELECT * FROM dadosepidemiologicos WHERE id='$ultimo_id'";
+        $resultado_dados = mysqli_query($conn, $result_dados);
+        $row_dado = mysqli_fetch_assoc($resultado_dados);
+
+        $obitos = $row_dado['dadosObitos'];
+        $casos = $row_dado['dadosCasos'];
+        $atualizado = $row_dado['created'];
+
+        ?>
+
+    <div id="box-1">
+        <h2>Casos</h2>
+        <p><?php echo $casos; ?></p>    
+    </div>
+    <div id="box-2">
+        <h2>Óbitos</h2>
+        <p><?php echo $obitos; ?></p>
+    </div>
+    <div id="box-3">
+        <h2>Atualizado</h2>
+        <p><?php echo $atualizado; ?></p>  
+    </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Casos</th>
+                <th>Obitos</th>
+                <th>Data</th>
+            </tr>
+        </thead>
         <?php
             $result_dados = "SELECT * FROM dadosepidemiologicos";
             $resultado_dados = mysqli_query($conn, $result_dados);
 
             while($row_dado = mysqli_fetch_assoc($resultado_dados)){
-                // echo "ID: ". $row_dado['id'] . "<br>";
-                echo "Casos: ". $row_dado['dadosCasos'] . "<br>";
-                echo "Obitos: ". $row_dado['dadosObitos'] . "<br>";
-                echo "Atualizado: ". $row_dado['created'] . "<br><hr>";
+                $casos = $row_dado['dadosCasos'];
+                $obitos = $row_dado['dadosObitos'];
+                $atualizado = $row_dado['created'];
+            
+        ?>
+        <tr>
+            <td><?php echo $casos; ?></td>
+            <td><?php echo $obitos; ?></td>
+            <td id="ultimo"><?php echo $atualizado; ?></td>
+        </tr>
+        <?php
             }
         ?>
-    </div>
-
 
     <!-- script -->
     <script src="../assets/js/main.js"></script>

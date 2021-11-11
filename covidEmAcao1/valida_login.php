@@ -7,11 +7,10 @@ if($btnLogin) {
     $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
     $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
 
-    // echo "$usuario - $senha";
-
     if((!empty($usuario)) AND (!empty($senha))) {
-        //echo password_hash($senha, PASSWORD_DEFAULT);
-
+        // echo password_hash($senha, PASSWORD_DEFAULT);
+        // die();
+        
         //pesquisa no banco de dados
         $result_usuario = "SELECT id, usuario, senha FROM login WHERE usuario = '$usuario' LIMIT 1";
         $resultado_usuario = mysqli_query($conn, $result_usuario);

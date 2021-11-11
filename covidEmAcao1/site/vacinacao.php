@@ -9,24 +9,15 @@ include_once("../conexao.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VACINAÇÃO</title>
     <link rel="stylesheet" href="../assets/styles/index.css">
+    <link rel="stylesheet" href="../assets/styles/consulta_site.css">
     <style>
-        html {
-            background-color: #808080;
-        }
-        .resultado {
-            text-align:center;
-            color: #3D3333;
-            font-size: 19px;
-        }
-
-        .resultado h1 {
-            text-align: left;
-            padding-bottom: 25px;
-            color: #fff;
+        .resultado{
+            margin: 90px 0 70px 120px;
         }
     </style>
-    <title>VACINAÇÃO</title>
+
 </head>
 <body>
     <header id="header">
@@ -45,22 +36,76 @@ include_once("../conexao.php");
             </ul>
         </nav>
     </header>
-    <div class="resultado">
     <h1>Dados Sobre Vacinação</h1>
-        <?php
-            $result_vacinas = "SELECT * FROM dadosvacinacao";
-            $resultado_vacina = mysqli_query($conn, $result_vacinas);
-            while($row_vacina = mysqli_fetch_assoc($resultado_vacina)){
-                echo "Doses Aplicadas: ". $row_vacina['dosesAplicadas'] . "<br>";
-                echo "Doses Distribuidas: ". $row_vacina['dosesDistribuidas'] . "<br>";
-                echo "Primeira Dose: ". $row_vacina['primeiraDose'] . "<br>";
-                echo "Segunda Dose: ". $row_vacina['segundaDose'] . "<br>";
-                echo "Recursos: ". $row_vacina['recursos'] . "<br>";
-                echo "Atualizado: ". $row_vacina['created'] . "<br><hr>";
-            }
+    <div class="resultado">
+    <?php 
+        $result_id = "SELECT MAX(idCovid) as idCovid FROM dadosvacinacao";
+        $resultado_id = mysqli_query($conn, $result_id);
+        $row_id = mysqli_fetch_assoc($resultado_id);
+
+        $ultimo_id = $row_id['idCovid'];
+
+        $result_dados = "SELECT * FROM dadosvacinacao WHERE idCovid='$ultimo_id'";
+        $resultado_dados = mysqli_query($conn, $result_dados);
+        $row_dados = mysqli_fetch_assoc($resultado_dados);
+
+        $dosesAplicadas = $row_dados['dosesAplicadas'];
+        $dosesDistribuidas = $row_dados['dosesDistribuidas'];
+        $pDose = $row_dados['primeiraDose'];
+        $sDose = $row_dados['segundaDose'];
+        $atualizado = $row_dados['created'];
+
         ?>
+
+    <div id="box">
+        <h2>Doses Aplicadas</h2>
+        <p><?php echo $dosesAplicadas; ?></p>    
+    </div>
+    <div id="box">
+        <h2>Doses Distribuidas</h2>
+        <p><?php echo $dosesDistribuidas; ?></p>
+    </div>
+    <div id="box">
+        <h2>Primeira Doses</h2>
+        <p><?php echo $pDose; ?></p>  
+    </div>
+    <div id="box">
+        <h2>Segunda Dose</h2>
+        <p><?php echo $sDose; ?></p>  
+    </div>
     </div>
 
+    <table>
+        <thead>
+            <tr>
+                <th>Dose Aplicadas</th>
+                <th>Doses Distribuidas</th>
+                <th>Primeira Dose</th>
+                <th>Segunda Dose</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <?php
+            $result_dados = "SELECT * FROM dadosvacinacao";
+            $resultado_dados = mysqli_query($conn, $result_dados);
+
+            while($row_dados = mysqli_fetch_assoc($resultado_dados)){
+                $dosesAplicadas = $row_dados['dosesAplicadas'];
+                $dosesDistribuidas = $row_dados['dosesDistribuidas'];
+                $pDose = $row_dados['primeiraDose'];
+                $sDose = $row_dados['segundaDose'];
+                $atualizado = $row_dados['created'];
+        ?>
+        <tr>
+            <td><?php echo $dosesAplicadas; ?></td>
+            <td><?php echo $dosesDistribuidas; ?></td>
+            <td><?php echo $pDose ; ?></td>
+            <td><?php echo $sDose ; ?></td>
+            <td id="ultimo"><?php echo $atualizado; ?></td>
+        </tr>
+        <?php
+            }
+        ?>
 
     <!-- script -->
     <script src="../assets/js/main.js"></script>
