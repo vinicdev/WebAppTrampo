@@ -27,16 +27,12 @@ if(!empty($_SESSION['id'])) {
         
     </head>
     <body>
-        <a href="adm_listarUsuario.php">Listar</a><br>
-        <a href="menu.php">Menu</a><br>
+        <div class="top">
+            <a href="adm_listarUsuario.php">Listar</a><br>
+            <a href="menu.php">Menu</a>
+        </div>
         <div class="fundo">
             <h1>Cadastrar Usuário</h1>
-            <?php
-                if(isset($_SESSION['msg'])){
-                    echo $_SESSION['msg'];
-                    unset ($_SESSION['msg']);
-                }
-            ?>
             <form method="POST" action="proc_cad_usuario.php">
                 <label>Nome: </label>
                 <input type="text" name="usuario" placeholder="Digite um usuário" id="campo"><br><br>
@@ -46,6 +42,12 @@ if(!empty($_SESSION['id'])) {
     
                 <input type="submit" value="cadastrar" id="button">
             </form>
+            <?php
+                if(isset($_SESSION['msg'])){
+                    echo $_SESSION['msg'];
+                    unset ($_SESSION['msg']);
+                }
+            ?>
         </div>
     </body>
 </html>

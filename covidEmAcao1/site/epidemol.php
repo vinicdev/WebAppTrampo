@@ -6,23 +6,27 @@ include_once("../conexao.php");
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DADOS EPIDEMIOLOGICOS</title>
     <link rel="stylesheet" href="../assets/styles/index.css">
     <link rel="stylesheet" href="../assets/styles/consulta_site.css">
+    <style>
+        .resultado {
+            margin: 90px 0 70px 20px;
+        }
+
+        #box{
+            margin-left: 240px;
+            width: 300px;
+        }
+    </style>
 </head>
 <body>
     <header id="header">
         <a id="logo" href="#"><img src="../assets/image/logoifpr.png" id="imgLogo"></a>
         <nav id="nav">
-            <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
-                <span id="hamburger"></span>
-            </button>
             <ul id="menu" role="menu">
                 <li><a href="index.html" id="menua">Inicio</a></li>
-                <li><a href="#" id="menua">Sobre</a></li>
+                <li><a href="#" id="menua">O que é?</a></li>
                 <li><a href="vacinacao.php" id="menua">Vacinas</a></li>
                 <li><a href="epidemol.php" id="menua">Dados Epidemiologicos</a></li>
                 <li><a href="meiosDePreven.php" id="menua">Prevenções</a></li>
@@ -49,15 +53,15 @@ include_once("../conexao.php");
 
         ?>
 
-    <div id="box-1">
+    <div id="box">
         <h2>Casos</h2>
         <p><?php echo $casos; ?></p>    
     </div>
-    <div id="box-2">
+    <div id="box">
         <h2>Óbitos</h2>
         <p><?php echo $obitos; ?></p>
     </div>
-    <div id="box-3">
+    <div id="box">
         <h2>Atualizado</h2>
         <p><?php echo $atualizado; ?></p>  
     </div>
@@ -90,7 +94,5 @@ include_once("../conexao.php");
             }
         ?>
 
-    <!-- script -->
-    <script src="../assets/js/main.js"></script>
 </body>
 </html>

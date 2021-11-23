@@ -18,9 +18,9 @@ if(!empty($_SESSION['id'])) {
         <title>Menu - ADMINISTRAÇÃO</title>
     </head>
     <body>
-        <div class="botoesTop">
+        <div class="top">
             <a href="sair.php">Sair</a><br>
-            <a href="http://localhost/phpmyadmin/db_structure.php?server=1&db=covidemacao1" target="_blank">Banco</a><br>
+            <a href="http://localhost/phpmyadmin/db_structure.php?server=1&db=covidemfoco" target="_blank">Banco</a><br>
         </div>
         <div class="fundo">
             <h1>Menu de Administração</h1>

@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+    margin-top: 85px;
+    font-size: 45px;
+}
+
+#blocks {
+    display: flex;
+}
+
+#box {
+    text-align: center;
+    margin: 150px 20px 0 0;
+    width: 550px;
+    font-size: 17px;
+    border-radius: 10px;
+    background-color: #EEEEEE;
+
+    position: relative;
+    left: 10px;
+}

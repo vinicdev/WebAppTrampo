@@ -7,10 +7,13 @@
 
 //Recebe os dados do formulário
 $meiosdescricao = filter_input(INPUT_POST, 'meiosdepreven', FILTER_SANITIZE_STRING);
+$sintomas = filter_input(INPUT_POST, 'sintomas', FILTER_SANITIZE_STRING);
 
+// echo 'Sintomas: ' . $sintomas . '<br>'; 
+// die();
 
 //Inserindo formato
-$result_dados = "INSERT INTO  meiosdeprevencao (descricao, created) VALUES ('$meiosdescricao', NOW())";
+$result_dados = "INSERT INTO  meiosdeprevencao (descricao, sintomas, created) VALUES ('$meiosdescricao', '$sintomas', NOW())";
 
 //Fazendo conexão e inserindo os dados
 $resultado_dados = mysqli_query($conn, $result_dados);

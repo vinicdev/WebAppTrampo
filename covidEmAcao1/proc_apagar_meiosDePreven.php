@@ -14,10 +14,10 @@ if(!empty($id)) {
     $_SESSION['msg'] = "<p style = 'color:green;'>Meios de prevenção Apagado com sucesso</p>";
     header("Location: adm_listarMeiosDePreven.php");
     }else {
-    $_SESSION['msg'] = "<p style = 'color:red;'>Meios de prevenção não foi Apagado com sucesso</p>";
+    $_SESSION['msg'] = "<p style = 'color: white;'>Meios de prevenção não foi Apagado com sucesso</p>";
     header("Location: adm_listarMeiosDePreven.php?id=$id");
     }
 }else {
-    $_SESSION['msg'] = "<p style = 'color:red;'>Necessário Selecionar um dos dados para excluir</p>";
+    $_SESSION['msg'] = "<p style = 'color:white;'>Necessário Selecionar um dos dados para excluir</p>";
     header("Location: adm_listarMeiosDePreven.php?id=$id");
     }

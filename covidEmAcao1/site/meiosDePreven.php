@@ -37,7 +37,7 @@ include_once("../conexao.php");
             </button>
             <ul id="menu" role="menu">
                 <li><a href="index.html" id="menua">Inicio</a></li>
-                <li><a href="#" id="menua">Sobre</a></li>
+                <li><a href="#" id="menua">O que é?</a></li>
                 <li><a href="vacinacao.php" id="menua">Vacinas</a></li>
                 <li><a href="epidemol.php" id="menua">Dados Epidemiologicos</a></li>
                 <li><a href="meiosDePreven.php" id="menua">Prevenções</a></li>
@@ -57,9 +57,5 @@ include_once("../conexao.php");
             }
         ?>
     </div>
-
-
-    <!-- script -->
-    <script src="../assets/js/main.js"></script>
 </body>
 </html>
