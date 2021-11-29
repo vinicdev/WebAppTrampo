@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 10-Nov-2021 às 18:23
+-- Tempo de geração: 29-Nov-2021 às 13:59
 -- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
@@ -35,7 +35,14 @@ CREATE TABLE IF NOT EXISTS `dadosepidemiologicos` (
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `dadosepidemiologicos`
+--
+
+INSERT INTO `dadosepidemiologicos` (`id`, `dadosCasos`, `dadosObitos`, `created`, `modified`) VALUES
+(1, '123', '123', '2021-11-12 16:26:09', '2021-11-29 09:59:34');
 
 -- --------------------------------------------------------
 
@@ -54,7 +61,15 @@ CREATE TABLE IF NOT EXISTS `dadosvacinacao` (
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`idCovid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `dadosvacinacao`
+--
+
+INSERT INTO `dadosvacinacao` (`idCovid`, `dosesAplicadas`, `dosesDistribuidas`, `primeiraDose`, `segundaDose`, `recursos`, `created`, `modified`) VALUES
+(1, '12000', '15000', '70000', '50000', '100000000', '2021-11-10 15:27:22', NULL),
+(2, '300000', '500000', '300000', '0', '3000000000', '2021-11-10 15:29:22', NULL);
 
 -- --------------------------------------------------------
 
@@ -70,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `login` (
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `login`
@@ -78,21 +93,6 @@ CREATE TABLE IF NOT EXISTS `login` (
 
 INSERT INTO `login` (`id`, `usuario`, `senha`, `created`, `modified`) VALUES
 (1, 'admin', '$2y$10$z9g7qbrM5/WgJoH/Aaz0gOVYfB9wsYwFK8YnxbNyVPUVJxKOVQ24C', '2021-11-10 15:20:21', NULL);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `meiosdeprevencao`
---
-
-DROP TABLE IF EXISTS `meiosdeprevencao`;
-CREATE TABLE IF NOT EXISTS `meiosdeprevencao` (
-  `idMeios` int(11) NOT NULL AUTO_INCREMENT,
-  `descricao` varchar(100) NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`idMeios`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
