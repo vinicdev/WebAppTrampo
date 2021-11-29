@@ -11,12 +11,11 @@ include_once("../conexao.php");
     <link rel="stylesheet" href="../assets/styles/consulta_site.css">
     <style>
         .resultado {
-            margin: 90px 0 70px 20px;
+            margin: 90px auto 70px auto;
         }
 
         #box{
-            margin-left: 240px;
-            width: 300px;
+            width: 571px;
         }
     </style>
 </head>
@@ -29,12 +28,24 @@ include_once("../conexao.php");
                 <li><a href="#" id="menua">O que é?</a></li>
                 <li><a href="vacinacao.php" id="menua">Vacinas</a></li>
                 <li><a href="epidemol.php" id="menua">Dados Epidemiologicos</a></li>
-                <li><a href="meiosDePreven.php" id="menua">Prevenções</a></li>
+                <li><a href="meiosDePreven.html" id="menua">Prevenções</a></li>
                 <li><a href="../login.php" id="menuaLogin">Login</a></li>
             </ul>
         </nav>
     </header>
     <h1>Dados Epidemiologicos</h1>
+
+    <div id="text">
+        <p>
+            A SMS explicou que quando você inala uma gotícula que está contaminada com o 
+            Coronavírus, esse vírus entra nas células do nariz e começa a se multiplicar, produzindo mais 
+            vírus, que vão entrando em outras células, danificando as mesmas, e produzindo mais vírus 
+            que danificam ainda mais células. A quantidade de vírus que entraram em seu corpo, as células 
+            que eles infectaram, e a resposta do seu corpo a esses vírus, vão refletir nos sintomas de cada 
+            um. No geral depois que você foi infectado, demora de 2 a 14 dias pra você começar a ter 
+            sintomas, e até hoje a ciência não conseguiu dizer quem vai desenvolver antes dos outros.
+        </p>
+    </div>
     <div class="resultado">
     <?php 
         $result_id = "SELECT MAX(id) as id FROM dadosepidemiologicos";
@@ -60,10 +71,6 @@ include_once("../conexao.php");
     <div id="box">
         <h2>Óbitos</h2>
         <p><?php echo $obitos; ?></p>
-    </div>
-    <div id="box">
-        <h2>Atualizado</h2>
-        <p><?php echo $atualizado; ?></p>  
     </div>
     </div>
 

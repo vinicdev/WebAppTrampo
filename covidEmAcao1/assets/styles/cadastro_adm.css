@@ -30,11 +30,7 @@ a {
     background: #F8F8FF;
     width: 650px;
     height: 560px;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 15%);
-
-    /* border-radius: 7%; */
+    margin: 25px auto 0 auto;
     border-radius: 10px 10%;
 }
 
@@ -86,7 +82,8 @@ input {
     margin-bottom: 25px;
 }
 #button:hover {
-    background: #441088;
-    color: #fff;
+    background-color: #8a8a8a;
+    color: rgb(255, 255, 255);
+    transition: .2s;
 
 }

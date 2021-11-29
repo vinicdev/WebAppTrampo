@@ -1,9 +1,3 @@
-h1 {
-    text-align: center;
-    margin-top: 85px;
-    font-size: 45px;
-}
-
 #blocks {
     display: flex;
 }
@@ -18,4 +12,10 @@ h1 {
 
     position: relative;
     left: 10px;
+}
+
+#box:hover {
+    cursor: pointer;
+    border: 1px solid #000;
+    transition: .8s;
 }

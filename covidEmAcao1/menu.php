@@ -42,12 +42,6 @@ if(!empty($_SESSION['id'])) {
                     <a href="cad_vacinacao.php">Cadastrar</a><br>
                     <a href="adm_listarVacinacao.php">Consultar</a>
                 </div>
-                
-                <h3>Dados Meios de prevenção</h3>
-                <div class="links">
-                    <a href="cad_meiosDePreven.php">Cadastrar</a><br>
-                    <a href="adm_listarMeiosDePreven.php">Consultar</a>
-                </div>
             </div>
         </div>
 

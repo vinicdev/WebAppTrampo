@@ -60,3 +60,9 @@ a#menuaLogin:hover {
     display: block;
     padding: .5rem;
 }
+
+h1 {
+    text-align: center;
+    margin-top: 85px;
+    font-size: 45px;
+}

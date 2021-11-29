@@ -30,8 +30,10 @@ if(!empty($_SESSION['id'])) {
         </style>
     </head>
     <body>
-        <a href="adm_listarEpidemol.php">Listar</a><br>
-        <a href="menu.php">Menu</a><br>
+        <div class="top">
+            <a href="adm_listarEpidemol.php">Listar</a><br>
+            <a href="menu.php">Menu</a><br>
+        </div>
         <div class="fundo">
             <h1>Cadastro Dados Epidemiologicos </h1>
             <form method="POST" action="proc_cad_epidemol.php">

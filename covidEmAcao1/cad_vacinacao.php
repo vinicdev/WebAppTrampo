@@ -20,8 +20,10 @@ if(!empty($_SESSION['id'])) {
         <title>Cadastro Dados Vacinação</title>
     </head>
     <body>
-        <a href="adm_listarVacinacao.php">Listar</a><br>
-        <a href="menu.php">Menu</a><br>
+        <div class="top">
+            <a href="adm_listarVacinacao.php">Listar</a><br>
+            <a href="menu.php">Menu</a><br>
+        </div>
         <div class="fundo">
             <h1>Cadastro Dados Vacinação</h1>
             <form method="POST" action="proc_cad_vacinacao.php">

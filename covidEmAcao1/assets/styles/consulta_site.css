@@ -14,9 +14,9 @@ h1 {
     font-size: 18px;
 }
 
+
 .resultado {
-    position: relative;
-    left: 6%;
+    margin: 0 auto 0 auto;
     width: 155vh;
     display: flex;
     justify-content: center;
@@ -36,13 +36,13 @@ h1 {
     height: 150px;
     border-radius: 10px;
     color: #000;
-    margin: 15px;
+    margin: 0 15px 0 0;
 }
 
 
 table {
-    margin: 50px 240px;
-    width: 1125px;
+    margin: 0 auto 100px auto;
+    width: 1200px;
 }
 
 th {
