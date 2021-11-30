@@ -35,7 +35,7 @@ if(!empty($_SESSION['id'])) {
                 }
 
                 //Lista os dados do BDD
-                $result_vacinas = "SELECT * FROM dadosvacinacao";
+                $result_vacinas = "SELECT *, DATE_FORMAT(created,'%d/%m/%Y') as created FROM dadosvacinacao";
                 $resultado_vacina = mysqli_query($conn, $result_vacinas);
                 while($row_vacina = mysqli_fetch_assoc($resultado_vacina)){
                     echo "ID: ". $row_vacina['idCovid'] . "<br>";

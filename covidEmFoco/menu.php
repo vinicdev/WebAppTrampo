@@ -21,6 +21,7 @@ if(!empty($_SESSION['id'])) {
         <div class="top">
             <a href="sair.php">Sair</a><br>
             <a href="http://localhost/phpmyadmin/db_structure.php?server=1&db=covidemfoco" target="_blank">Banco</a><br>
+            <a href="site/index.html">Site</a>
         </div>
         <div class="fundo">
             <h1>Menu de Administração</h1>

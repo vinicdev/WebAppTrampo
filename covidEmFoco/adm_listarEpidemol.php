@@ -35,7 +35,9 @@ if(!empty($_SESSION['id'])) {
                 }
 
                 //Lista os dados do BDD
-                $result_dados = "SELECT * FROM dadosepidemiologicos";
+                // $result_dados = "SELECT * FROM dadosepidemiologicos";
+                $result_dados = "SELECT *, DATE_FORMAT(created,'%d/%m/%Y') as created FROM dadosepidemiologicos";
+
                 $resultado_dados = mysqli_query($conn, $result_dados);
                 while($row_dados = mysqli_fetch_assoc($resultado_dados)){
                     echo "ID: " . $row_dados['id'] . "<br>";

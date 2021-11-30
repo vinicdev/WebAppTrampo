@@ -63,7 +63,6 @@ include_once("../conexao.php");
         $pDose = $row_dados['primeiraDose'];
         $sDose = $row_dados['segundaDose'];
         $recurso = $row_dados['recursos'];
-        $atualizado = $row_dados['created'];
         
         ?>
 
@@ -108,7 +107,7 @@ include_once("../conexao.php");
             </tr>
         </thead>
         <?php
-            $result_dados = "SELECT * FROM dadosvacinacao";
+            $result_dados = "SELECT * ,DATE_FORMAT(created, '%d/%m/%Y') as created FROM dadosvacinacao";
             $resultado_dados = mysqli_query($conn, $result_dados);
 
             while($row_dados = mysqli_fetch_assoc($resultado_dados)){

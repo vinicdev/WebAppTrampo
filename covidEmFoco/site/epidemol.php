@@ -60,8 +60,6 @@ include_once("../conexao.php");
 
         $obitos = $row_dado['dadosObitos'];
         $casos = $row_dado['dadosCasos'];
-        $atualizado = $row_dado['created'];
-
         ?>
 
     <div id="box">
@@ -83,7 +81,7 @@ include_once("../conexao.php");
             </tr>
         </thead>
         <?php
-            $result_dados = "SELECT * FROM dadosepidemiologicos";
+            $result_dados = "SELECT *, DATE_FORMAT(created, '%d/%m/%Y') as created FROM dadosepidemiologicos";
             $resultado_dados = mysqli_query($conn, $result_dados);
 
             while($row_dado = mysqli_fetch_assoc($resultado_dados)){
